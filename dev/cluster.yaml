@@ -3,6 +3,8 @@ kind: Cluster
 metadata:
   name: pg-cluster
   namespace: postgresql-v1
+  labels:
+    app: postgres
 spec:
   instances: 2
   imageName: ghcr.io/cloudnative-pg/postgresql:15
@@ -27,3 +29,4 @@ spec:
     parameters:
       max_connections: "100"
       shared_buffers: "256MB"
+      
