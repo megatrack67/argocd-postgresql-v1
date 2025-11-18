@@ -1,0 +1,26 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: postgres-cluster
+  namespace: postgresql-v1
+  labels:
+    app: postgres
+spec:
+  instances: 2
+  imageName: ghcr.io/cloudnative-pg/postgresql:15
+  primaryUpdateStrategy: unsupervised
+  storage:
+    storageClass: local-storage
+    size: 5Gi
+  resources:
+    requests:
+      memory: 1Gi
+      cpu: "500m"
+    limits:
+      cpu: "1"
+  superuserSecret:
+    name: postgres-secret
+  bootstrap:
+    initdb:
+      database: appdb
+      owner: postgres
