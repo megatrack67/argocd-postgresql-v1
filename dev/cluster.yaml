@@ -14,11 +14,11 @@ spec:
     mountPath: /postgresql/data
   resources:
     requests:
-      cpu: "500m"
+      cpu: "1"
       memory: "512Mi"
     limits:
-      cpu: "1"
-      memory: "1Gi"
+      cpu: "2"
+      memory: "2Gi"
   bootstrap:
     initdb:
       database: appdb
@@ -29,4 +29,3 @@ spec:
     parameters:
       max_connections: "100"
       shared_buffers: "256MB"
-      
