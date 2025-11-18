@@ -9,6 +9,7 @@ spec:
   storage:
     size: 5Gi
     storageClass: standard
+    mountPath: /postgresql/data
   resources:
     requests:
       cpu: "500m"
