@@ -2,7 +2,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: postgres-cluster
-  namespace: postgresql-v1
+  namespace: postgres-v1
   labels:
     app: postgres
 spec:
